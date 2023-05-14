@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[5] = {1,4,35,12,33};       //i
+    int b[6] = {13,17,22,25,34,36};     //j
+    int c[11] ={};                    //k
+    
+    int m = sizeof(a)/sizeof(a[0]);
+    int n =sizeof(b)/sizeof(b[0]);
+    
+    int i=0;
+    int j=0;
+    int k=0;
+    
+    while(i<m && j<n)
+    {
+    if(a[i]<b[j])
+    {
+        c[k++] = a[i++];
+    }
+    else
+    {
+        c[k++] = b[j++];
+    }
+    }
+    for(;i<m;i++)
+    {
+        c[k++] = a[i++];
+    }
+    for(;j<n;j++)
+    {
+        c[k++] = b[j++];
+    }
+    
+    for(int x = 0 ;x<11;x++)
+    {
+        cout<<c[x]<<endl;
+    }
+    return 0;
+    
+}
