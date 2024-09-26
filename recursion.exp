@@ -1,0 +1,57 @@
+Functional Recursion - reverse the Array
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void reverse(int arr[], int n,int i)
+{
+    if(i>=n/2)
+    {
+        return;
+        
+    }
+    swap(arr[i], arr[n-i-1]);
+    reverse(arr, 7,i+1);
+    
+}
+
+int main()
+{
+    int arr[] = {1,2,3,4,6,5,7};
+    reverse(arr, 7, 0);
+    
+    for(auto k : arr)
+    {
+        cout<<k;
+    }
+    
+    return 0;
+}
+
+
+Functional Recursion - Check if the String is palindrome
+
+#include <iostream>
+using namespace std;
+
+
+bool CheckPalindrome(string &s, int n, int i)
+{
+   
+    if(i>=n/2)
+    return true;
+    if(s[i] != s[n-i-1])
+    return false;
+    
+    return CheckPalindrome(s,s.size(),i+1);
+}
+
+
+int main()
+{
+    
+    string s = "12121223";  //Check for the MADAM should return 0.
+    cout<<CheckPalindrome(s,s.size(),0);
+    return 0;
+}
